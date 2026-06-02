@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Toggle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section class="pricing-wrapper">
+    <h1 class="heading">Our Pricing Plans</h1>
+
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+      <span>Monthly</span>
+      <label class="switch">
+        <input type="checkbox" id="billing-toggle">
+        <span class="slider"></span>
+      </label>
+      <span>Yearly</span>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="pricing-container">
+      <div class="card">
+        <h2 class="plan">Starter</h2>
+        <p class="price"><span class="currency">$</span><span class="amount" data-month="9" data-year="90">9</span><span class="duration">/mo</span></p>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> Single Website</li>
+          <li><i class="fas fa-check-circle"></i> 10 GB Storage</li>
+          <li><i class="fas fa-check-circle"></i> Community Support</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+
+      <div class="card featured">
+        <h2 class="plan">Professional</h2>
+        <p class="price"><span class="currency">$</span><span class="amount" data-month="19" data-year="190">19</span><span class="duration">/mo</span></p>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> Up to 10 Websites</li>
+          <li><i class="fas fa-check-circle"></i> 100 GB Storage</li>
+          <li><i class="fas fa-check-circle"></i> Email Support</li>
+        </ul>
+        <a href="#" class="btn">Choose Plan</a>
+      </div>
+
+      <div class="card">
+        <h2 class="plan">Enterprise</h2>
+        <p class="price"><span class="currency">$</span><span class="amount" data-month="29" data-year="290">29</span><span class="duration">/mo</span></p>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+          <li><i class="fas fa-check-circle"></i> 1 TB Storage</li>
+          <li><i class="fas fa-check-circle"></i> 24/7 Priority Support</li>
+        </ul>
+        <a href="#" class="btn">Go Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

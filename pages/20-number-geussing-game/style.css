@@ -1,0 +1,94 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #dde7f0, #f0f3fa);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main container */
+.game-container {
+  background: #e0e5ec;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 30px #bec4d0, -10px -10px 30px #ffffff;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 26px;
+  color: #3a3a3a;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Input field */
+input[type="number"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e0e5ec;
+  box-shadow: inset 6px 6px 10px #bec4d0, inset -6px -6px 10px #ffffff;
+  color: #333;
+  margin-top: 10px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Buttons */
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #4a90e2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: #357ac9;
+}
+
+/* Restart button */
+#restart {
+  background: #f44336;
+  display: none;
+}
+
+#restart:hover {
+  background: #c62828;
+}
+
+/* Feedback display */
+.result {
+  margin-top: 20px;
+}

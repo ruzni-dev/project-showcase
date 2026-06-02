@@ -1,0 +1,131 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #2563eb; /* blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+/* Form Box */
+.form-box {
+  display: block;
+}
+
+.form-box.hidden {
+  display: none;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+form input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.forgot {
+  font-size: 12px;
+  color: #2563eb;
+  text-decoration: none;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.google {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.google:hover {
+  background: #f5f5f5;
+}
+
+.facebook:hover {
+  background: #0d5adf;
+}
+
+.switch-text {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.switch-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}

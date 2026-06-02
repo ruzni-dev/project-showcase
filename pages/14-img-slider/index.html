@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Image Slider</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="slider-container">
+    <div class="slides" id="slides">
+      <div class="slide">
+        <img decoding="async" src="https://picsum.photos/id/1015/900/480" alt="Slide 1" />
+        <div class="text-overlay">
+          <h2>Explore Nature</h2>
+          <p>Find peace in beautiful outdoor scenes</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img decoding="async" src="https://picsum.photos/id/1016/900/480" alt="Slide 2" />
+        <div class="text-overlay">
+          <h2>Urban Life</h2>
+          <p>Discover energy in every city view</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img decoding="async" src="https://picsum.photos/id/1018/900/480" alt="Slide 3" />
+        <div class="text-overlay">
+          <h2>Mountains & Clouds</h2>
+          <p>Breathe in the calm above the clouds</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- Indicators -->
+    <div class="indicators" id="indicators"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

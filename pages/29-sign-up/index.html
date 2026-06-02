@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Info Section -->
+    <div class="info-box" id="infoBox">
+      <h2 id="infoTitle">Welcome Back!</h2>
+      <p id="infoText">To stay connected, please login with your personal info.</p>
+      <button onclick="toggleForm()">Switch to Signup</button>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-box">
+
+      <!-- Login Form -->
+      <form id="loginForm" class="active">
+        <h2>Login</h2>
+        <div class="social-buttons">
+          <button type="button" class="google-btn">Google</button>
+          <button type="button" class="facebook-btn">Facebook</button>
+        </div>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button class="submit-btn">Login</button>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm">
+        <h2>Signup</h2>
+        <div class="social-buttons">
+          <button type="button" class="google-btn">Google</button>
+          <button type="button" class="facebook-btn">Facebook</button>
+        </div>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button class="submit-btn">Signup</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Toggle Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>

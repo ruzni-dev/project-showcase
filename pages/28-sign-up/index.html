@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup & Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <h2 class="left-title">Welcome to DARKBEAST's Project</h2>
+      <p class="left-text">
+        Build your coding future with free HTML, CSS, JavaScript & Python tutorials
+      </p>
+      <button id="toggleBtn" class="switch-btn">Switch to Signup</button>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <!-- Signup Form -->
+      <form id="signupForm" class="form-section hidden">
+        <h3 class="form-title">Create Account</h3>
+
+        <div class="social-buttons">
+          <button type="button" class="social-btn">
+            <i class="fab fa-google google-icon"></i>
+            <span>Google</span>
+          </button>
+          <button type="button" class="social-btn">
+            <i class="fab fa-facebook facebook-icon"></i>
+            <span>Facebook</span>
+          </button>
+        </div>
+
+        <div class="divider">
+          <div class="line"></div>
+          <span class="or-text">or</span>
+          <div class="line"></div>
+        </div>
+
+        <input type="text" placeholder="Full Name" class="input" required />
+        <input type="email" placeholder="Email Address" class="input" required />
+        <input type="password" placeholder="Password" class="input" required />
+
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="form-section">
+        <h3 class="form-title">Login to Your Account</h3>
+
+        <div class="social-buttons">
+          <button type="button" class="social-btn">
+            <i class="fab fa-google google-icon"></i>
+            <span>Google</span>
+          </button>
+          <button type="button" class="social-btn">
+            <i class="fab fa-facebook facebook-icon"></i>
+            <span>Facebook</span>
+          </button>
+        </div>
+
+        <div class="divider">
+          <div class="line"></div>
+          <span class="or-text">or</span>
+          <div class="line"></div>
+        </div>
+
+        <input type="email" placeholder="Email Address" class="input" required />
+        <input type="password" placeholder="Password" class="input" required />
+
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

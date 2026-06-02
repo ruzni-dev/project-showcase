@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f2f2f2;
+}
+
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 550px;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 40px;
+}
+
+form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+form h1 {
+  margin-bottom: 15px;
+}
+
+form input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 8px;
+}
+
+form button {
+  border-radius: 20px;
+  border: 1px solid #4a00e0;
+  background: #4a00e0;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 45px;
+  margin-top: 10px;
+  transition: transform 80ms ease-in;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+form a {
+  color: #4a00e0;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons .icon {
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  color: #333;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #4a00e0;
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 30px;
+  width: 50%;
+}
+
+.overlay-panel h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.overlay-panel p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.overlay-panel button {
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 35px;
+  transition: background 0.3s;
+}
+
+.overlay-panel button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Solar System */
+.solar-system {
+  margin-top: 25px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: rotate 12s linear infinite;
+}
+
+.orbit1 { width: 80px; height: 80px; top: 60px; left: 60px; }
+.orbit2 { width: 120px; height: 120px; top: 40px; left: 40px; animation-duration: 18s; }
+.orbit3 { width: 160px; height: 160px; top: 20px; left: 20px; animation-duration: 25s; }
+.orbit4 { width: 200px; height: 200px; top: 0; left: 0; animation-duration: 32s; }
+
+.planet {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.planet img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.planet.center {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.mobile-switch {
+  display: none;
+}
+
+/* ---------- Redesigned Mobile Styles (Final Fixed) ---------- */
+@media (max-width: 768px) {
+  body {
+    background: #fafafa;
+    padding: 20px;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    min-height: auto;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  /* Show solar system on top */
+  .solar-system {
+    display: block;
+    margin: 20px auto;
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Hide overlay panels completely */
+  .overlay-container,
+  .overlay {
+    display: none !important;
+  }
+
+  /* Switch tabs for mobile */
+  .mobile-switch {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 20px auto;
+    background: #eee;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .mobile-switch button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .mobile-switch button.active {
+    background: #4a00e0;
+    color: #fff;
+  }
+
+  /* Both forms stacked, hidden until active */
+  .form-container {
+    position: relative;
+    width: 100%;
+    padding: 25px 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin: 10px auto;
+    display: none;
+    flex-direction: column;
+
+    /* override desktop overlay animation */
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 1 !important;
+  }
+
+  .form-container.active {
+    display: flex;
+  }
+
+  form {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  form h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  form input {
+    padding: 14px 15px;
+    font-size: 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
+  form button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+  }
+
+  .social-icons .icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 8px;
+  }
+}
+
+/* Smallest screens */
+@media (max-width: 480px) {
+  form h1 {
+    font-size: 20px;
+  }
+  form input {
+    font-size: 13px;
+    padding: 12px;
+  }
+  form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .solar-system {
+    width: 140px;
+    height: 140px;
+  }
+}

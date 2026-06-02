@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidebar Toggle Menu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-area">
+        <span class="menu-text">Menu</span>
+      </div>
+      <button class="toggle-btn" id="toggleBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <ul class="menu">
+      <li><a href="#"><i class="fas fa-home"></i><span class="hide">Home</span></a></li>
+      <li><a href="#"><i class="fas fa-user"></i><span class="hide">Profile</span></a></li>
+      <li><a href="#"><i class="fas fa-cogs"></i><span class="hide">Settings</span></a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i><span class="hide">Messages</span></a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i><span class="hide">Logout</span></a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

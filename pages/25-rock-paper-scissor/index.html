@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="decoration dec-1"></div>
+    <div class="decoration dec-2"></div>
+
+    <div class="container">
+        <header>
+            <h1>ROCK <span class="brand">PAPER</span> SCISSORS</h1>
+            <p class="tagline">DARKBEAST's Project</p>
+        </header>
+
+        <div class="scores">
+            <div class="score-box">
+                <h3>PLAYER</h3>
+                <p id="player-score">0</p>
+            </div>
+            <div class="score-box">
+                <h3>COMPUTER</h3>
+                <p id="computer-score">0</p>
+            </div>
+            <div class="score-box">
+                <h3>ROUNDS</h3>
+                <p id="rounds">0</p>
+            </div>
+        </div>
+
+        <div class="choices">
+            <div class="choice" id="rock" data-choice="rock">
+                <i class="fa-solid fa-hand-back-fist"></i>
+            </div>
+            <div class="choice" id="paper" data-choice="paper">
+                <i class="fa-solid fa-hand"></i>
+            </div>
+            <div class="choice" id="scissors" data-choice="scissors">
+                <i class="fa-solid fa-hand-scissors"></i>
+            </div>
+        </div>
+
+        <div class="result-area">
+            <div class="player-choice">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <div class="vs">VS</div>
+            <div class="computer-choice">
+                <i class="fa-solid fa-question"></i>
+            </div>
+        </div>
+
+        <div class="result-text">Select your move to begin</div>
+
+        <button class="action-btn" id="reset-btn">
+            <i class="fas fa-sync-alt"></i> RESET GAME
+        </button>
+
+        <div class="rules">
+            <h3>GAME RULES</h3>
+            <ul>
+                <li><strong>ROCK</strong> defeats <strong>SCISSORS</strong> (rock crushes scissors)</li>
+                <li><strong>PAPER</strong> defeats <strong>ROCK</strong> (paper covers rock)</li>
+                <li><strong>SCISSORS</strong> defeats <strong>PAPER</strong> (scissors cut paper)</li>
+                <li>Identical selections result in a <strong>DRAW</strong></li>
+            </ul>
+        </div>
+
+        <div class="history">
+            <h3>GAME HISTORY</h3>
+            <div id="history-list">No moves recorded yet</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
