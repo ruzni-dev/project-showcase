@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission Form</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="custom-container">
+  <div class="custom-card">
+    <h1 class="heading">DARKBEAST's Project</h1>
+    <p class="custom-para">Admission Application Form</p>
+
+    <!-- Progress Bar -->
+    <div class="custom-bar">
+      <div class="step-bar"></div>
+    </div>
+    <p class="custom-caption">Step <span id="step-number">1</span> of 4</p>
+
+    <form id="admissionForm">
+      <!-- Step 1 -->
+      <div class="step active">
+        <h2 class="step-heading">Personal Information</h2>
+        <div class="step-container">
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Full Name</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Father's Name</label>
+          </div>
+           <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>CNIC / B-Form Number</label>
+          </div>
+          <div class="floating-label">
+            <input type="date" placeholder=" " required />
+            <label>Date of Birth</label>
+          </div>
+          <div class="floating-label">
+            <select required>
+              <option value="" disabled selected hidden></option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+            <label>Gender</label>
+          </div>
+          <div class="floating-label">
+            <input type="tel" placeholder=" " required />
+            <label>Mobile Number</label>
+          </div>
+          <div class="floating-label">
+            <input type="email" placeholder=" " />
+            <label>Email Address</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <h2 class="step-heading">Academic Background</h2>
+        <div class="step-container">
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Last Qualification</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Institution Name</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Marks Obtained</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Total Marks</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " />
+            <label>Board or University</label>
+          </div>
+          <div class="floating-label">
+            <input type="number" placeholder=" " />
+            <label>Passing Year</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <h2 class="custom-heading">Course Selection</h2>
+        <div class="step3-container">
+          <div class="floating-label">
+            <select required>
+              <option value="" disabled selected hidden></option>
+              <option>Office Management</option>
+              <option>Graphic Designing</option>
+              <option>Web Development</option>
+              <option>Python Programming</option>
+              <option>Video Editing</option>
+            </select>
+            <label>Select Course</label>
+          </div>
+          <div class="floating-label">
+            <textarea placeholder=" " required rows="4"></textarea>
+            <label>Why are you interested in this course?</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <h2 class="custom-heading">Address & Declaration</h2>
+        <div class="step3-container">
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>Full Address</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" placeholder=" " required />
+            <label>City</label>
+          </div>
+          <label class="flex-row">
+            <input type="checkbox" required class="flex-input" />
+            <span>I confirm that the information provided is accurate to the best of my knowledge.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="button-row">
+        <button type="button" id="prevBtn" class="btn1">Previous</button>
+        <button type="button" id="nextBtn" class="btn2">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
