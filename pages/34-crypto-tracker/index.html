@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker | Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-coins"></i></div>
+                <div class="logo-text">DARKBEAST Crypto Tracker</div>
+            </div>
+            <div class="last-updated">Last updated: <span id="update-time">Just now</span></div>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search cryptocurrencies...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="gainers">Gainers</button>
+                <button class="filter-btn" data-filter="losers">Losers</button>
+                <button class="filter-btn" data-filter="top10">Top 10</button>
+            </div>
+        </div>
+
+        <div class="crypto-grid" id="crypto-grid">
+            <!-- Crypto cards will be generated here -->
+        </div>
+
+        <div class="chart-container" id="chart-container" style="display: none;">
+            <div class="chart-header">
+                <div class="chart-title">
+                    <div class="crypto-icon" id="chart-crypto-icon"><i class="fab fa-bitcoin"></i></div>
+                    <h2 id="chart-crypto-name">Bitcoin <span id="chart-crypto-symbol">(BTC)</span></h2>
+                </div>
+                <div class="chart-timeframes">
+                    <button class="timeframe-btn active" data-timeframe="1">24H</button>
+                    <button class="timeframe-btn" data-timeframe="7">7D</button>
+                    <button class="timeframe-btn" data-timeframe="30">30D</button>
+                    <button class="timeframe-btn" data-timeframe="365">1Y</button>
+                </div>
+            </div>
+            <div class="chart-canvas-container">
+                <canvas id="price-chart"></canvas>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 <a href="https://darkbeast2003.github.io/portfolio1/">DARKBEAST</a> Crypto Tracker | Data provided by CoinGecko API | Auto-refreshes every 60 seconds</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
