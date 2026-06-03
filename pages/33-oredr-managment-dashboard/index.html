@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-content">
+                    <div class="diamond-logo">
+                        <div class="diamond-shape">
+                            <i class="fas fa-diamond"></i>
+                        </div>
+                    </div>
+                    <h1>Ruzni</h1>
+                </div>
+                <button class="toggle-btn" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Sales</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Support</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="page-title">
+                    <h2>Dashboard</h2>
+                    <p>Welcome back, DARKBEAST! Here's today's summary.</p>
+                </div>
+                <div class="header-controls">
+                    <label class="theme-toggle">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <div class="user-profile">
+                        <div class="user-info">
+                            <h4>MOHAMAD RUZNI</h4>
+                            <p>Admin</p>
+                        </div>
+                        <div class="avatar">DBR</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Cards -->
+            <div class="metrics">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Tool Sales</div>
+                        <div class="card-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-explorer">Tools</button>
+                        </div>
+                    </div>
+                    <div class="card-value">$25,024</div>
+                    <div class="card-footer">Increased by 12% this month</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Target: $30,000</span>
+                            <span>83.4%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 83.4%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Tool Expenses</div>
+                        <div class="card-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-explorer">Tools</button>
+                        </div>
+                    </div>
+                    <div class="card-value">$14,160</div>
+                    <div class="card-footer">Decreased by 5% this month</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Budget: $15,000</span>
+                            <span>94.4%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 94.4%; background: var(--warning);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Tool Income</div>
+                    </div>
+                    <div class="card-value">$10,864</div>
+                    <div class="card-footer">Net profit after expenses</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Goal: $12,000</span>
+                            <span>90.5%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 90.5%; background: var(--success);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Recent Updates -->
+                    <div class="updates">
+                        <h3 class="section-title"><i class="fas fa-bell"></i> Recent Updates</h3>
+                        <ul class="update-list">
+                            <li class="update-item">
+                                <strong>Mile System</strong> received the credit of Apple Inc. under GPS license.
+                            </li>
+                            <li class="update-item">
+                                <strong>Money Management</strong> has made of 2 DAM ZFC $1,000 million.
+                            </li>
+                            <li class="update-item">
+                                <strong>Money Pay</strong> received the credit of LANDWICH SYDX3 Device.
+                            </li>
+                            <li class="update-item">
+                                <strong>Money Pay</strong> has launched a new payment gateway for international
+                                transactions.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Orders Table -->
+                    <div class="orders">
+                        <h3 class="section-title"><i class="fas fa-shopping-cart"></i> Respect Orders</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Projects</th>
+                                    <th>Product Name</th>
+                                    <th>Product Number</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Sales Analytics</th>
+                                    <th>Total Sales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Settings</td>
+                                    <td>Failedable Mini Device</td>
+                                    <td>(555)</td>
+                                    <td class="payment-due">Due</td>
+                                    <td><span class="status status-funding">Funding</span></td>
+                                    <td><a href="#" class="details-link">Details</a></td>
+                                    <td>$25,024</td>
+                                </tr>
+                                <tr>
+                                    <td>Add Products</td>
+                                    <td>LANDWICH SYDX3 Device</td>
+                                    <td>5579</td>
+                                    <td class="payment-refunded">Refunded</td>
+                                    <td><span class="status status-deferred">Deferred</span></td>
+                                    <td><a href="#" class="details-link">Details</a></td>
+                                    <td>Last $1 Hours</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Rules IT Pro Device</td>
+                                    <td>457</td>
+                                    <td class="payment-due">Due</td>
+                                    <td><span class="status status-funding">Funding</span></td>
+                                    <td><a href="#" class="details-link">Details</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Device with Common Device</td>
+                                    <td>93995</td>
+                                    <td class="payment-due">Red</td>
+                                    <td><span class="status status-deferred">Deferred</span></td>
+                                    <td><a href="#" class="details-link">Details</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>GPS & Glosses</td>
+                                    <td>2180</td>
+                                    <td class="payment-due">Red</td>
+                                    <td><span class="status status-deferred">Deferred</span></td>
+                                    <td><a href="#" class="details-link">Details</a></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Sales Analytics -->
+                    <div class="analytics">
+                        <h3 class="section-title"><i class="fas fa-chart-pie"></i> Sales Analytics</h3>
+
+                        <div class="analytics-item">
+                            <div class="analytics-header">
+                                <div class="analytics-title">CHINA GROWS</div>
+                                <div class="analytics-percent">80%</div>
+                            </div>
+                            <div class="analytics-values">
+                                <span>35.00</span>
+                                <span>100.00</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 80%; background: var(--primary);"></div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-item">
+                            <div class="analytics-header">
+                                <div class="analytics-title">OTTONE GROWS</div>
+                                <div class="analytics-percent">65%</div>
+                            </div>
+                            <div class="analytics-values">
+                                <span>18.00</span>
+                                <span>11.00</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 65%; background: var(--success);"></div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-item">
+                            <div class="analytics-header">
+                                <div class="analytics-title">NEW CUSTOMER</div>
+                                <div class="analytics-percent">45%</div>
+                            </div>
+                            <div class="analytics-values">
+                                <span>8.45</span>
+                                <span>5.00</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 45%; background: var(--warning);"></div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-item">
+                            <div class="analytics-header">
+                                <div class="analytics-title">York Express</div>
+                                <div class="analytics-percent">30%</div>
+                            </div>
+                            <div class="analytics-values">
+                                <span>5.00</span>
+                                <span></span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 30%; background: var(--info);"></div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-total">
+                            Total Express: $14,160
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-metrics">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Dashboard</div>
+                    </div>
+                    <div class="card-value">/ 43 / 7777</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Target: 100</span>
+                            <span>43%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 43%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Tool Sales</div>
+                        <div class="card-actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-explorer">Tools</button>
+                        </div>
+                    </div>
+                    <div class="card-value">$25,024</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Target: $30,000</span>
+                            <span>83.4%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 83.4%; background: var(--success);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Tool Income</div>
+                    </div>
+                    <div class="card-value">$10,864</div>
+
+                    <!-- Progress chart -->
+                    <div class="progress-chart">
+                        <div class="progress-info">
+                            <span>Goal: $12,000</span>
+                            <span>90.5%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 90.5%; background: var(--warning);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
