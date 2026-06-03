@@ -13,12 +13,13 @@
 
 <nav class="glass-nav">
   <div class="nav-container">
-    <div class="logo"><i class="fas fa-crown" style="color: #a48eff; margin-right: 8px;"></i>Ruzni's STUDIO</div>
+    <a href="../index.html" class="logo" style="text-decoration: none;"><i class="fas fa-crown" style="color: #a48eff; margin-right: 8px;"></i>Ruzni's STUDIO</a>
     <div class="nav-links">
-      <a href="../pages/web-development.html" class="nav-link"><i class="fas fa-globe"></i> Web Dev</a>
-      <a href="../pages/software-development.html" class="nav-link"><i class="fas fa-code"></i> Software</a>
-      <a href="../pages/ai-projects.html" class="nav-link"><i class="fas fa-brain"></i> AI</a>
-      <a href="../pages/cyber-security.html" class="nav-link"><i class="fas fa-shield-halved"></i> Security</a>
+      <a href="web-development.html" class="nav-link"><i class="fas fa-globe"></i> Web Dev</a>
+      <a href="software-development.html" class="nav-link"><i class="fas fa-code"></i> Software</a>
+      <a href="ai-projects.html" class="nav-link"><i class="fas fa-brain"></i> AI</a>
+      <a href="cyber-security.html" class="nav-link"><i class="fas fa-shield-halved"></i> Security</a>
+      <a href="graphic-design.html" class="nav-link active"><i class="fas fa-palette"></i> Design</a>
       <a href="../index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Home</a>
       <a href="https://portfolio1-pearl-seven.vercel.app/#contact" class="nav-cta">Let's Talk <i class="fas fa-arrow-right"></i></a>
     </div>
@@ -35,37 +36,8 @@
   </div>
 </section>
 
-<div class="projects-container">
-  <!-- Graphic Design Projects will be displayed here -->
-  <div class="project-card">
-    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-    <div class="project-info">
-      <h3>Brand Identity Design</h3>
-      <p class="project-category"><i class="fas fa-tag"></i> Graphic design</p>
-      <p>Complete brand identity system including logo, color palette, and visual guidelines.</p>
-      <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
-    <div class="project-info">
-      <h3>Marketing Collateral</h3>
-      <p class="project-category"><i class="fas fa-tag"></i> Graphic design</p>
-      <p>Professional marketing materials including brochures, banners, and promotional designs.</p>
-      <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-    <div class="project-info">
-      <h3>UI/UX Design System</h3>
-      <p class="project-category"><i class="fas fa-tag"></i> Graphic design</p>
-      <p>Comprehensive design system with components, patterns, and interactive prototypes.</p>
-      <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
+<div class="projects-container" id="projectsContainer">
+  <!-- Graphic Design Projects will be displayed here dynamically -->
 </div>
 
 <section class="cta-section">
@@ -76,6 +48,23 @@
 <footer>
   <p>© 2025 Ruzni's STUDIO — Portfolio showcase. All works belong to their respective visionaries.</p>
 </footer>
+
+<!-- Modal overlay -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card">
+    <span class="modal-close" id="closeModalBtn">&times;</span>
+    <h2 class="modal-title" id="modalTitle">Project Title</h2>
+    <span class="modal-category" id="modalCategory">Category</span>
+    <p class="modal-desc" id="modalDesc">Detailed description...</p>
+    <div class="modal-tech" id="modalTech">
+      <span>Tech stack:</span> React, D3.js
+    </div>
+    <div class="modal-buttons">
+      <button class="modal-btn modal-btn-primary" id="liveDemoBtn">Live Demo</button>
+      <button class="modal-btn" id="closeModalSecondBtn">Close</button>
+    </div>
+  </div>
+</div>
 
 <script src="../assets/js/script.js"></script>
 </body>
