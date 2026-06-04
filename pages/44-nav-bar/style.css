@@ -1,0 +1,63 @@
+:root {
+  --bg: #f5f5f5;
+  --nav-bg: #ffffff;
+  --accent: #4f46e5; /* Indigo */
+  --icon-default: #888;
+  --icon-active: #ffffff;
+  --glow: rgba(79, 70, 229, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+  gap: 40px;
+  background: var(--nav-bg);
+  padding: 20px 28px;
+  border-radius: 50px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
+}
+
+.nav-item {
+  font-size: 24px;
+  color: var(--icon-default);
+  transition: 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.nav-item.active {
+  color: var(--icon-active);
+}
+
+.nav-item:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Glowing background pill */
+.glow {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  border-radius: 50%;
+  z-index: 1;
+  bottom: 12px;
+  left: 15px;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 20px var(--glow);
+}

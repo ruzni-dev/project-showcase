@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Navbar</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="glow"></div>
+
+    <a href="#" class="nav-item active" data-index="0"><i data-lucide="home"></i></a>
+    <a href="#" class="nav-item" data-index="1"><i data-lucide="user"></i></a>
+    <a href="#" class="nav-item" data-index="2"><i data-lucide="heart"></i></a>
+    <a href="#" class="nav-item" data-index="3"><i data-lucide="monitor"></i></a>
+    <a href="#" class="nav-item" data-index="4"><i data-lucide="settings"></i></a>
+  </nav>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
