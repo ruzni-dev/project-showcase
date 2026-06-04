@@ -1,0 +1,24 @@
+# Node
+node_modules/
+
+# Build output
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+
+# Misc
+.env
