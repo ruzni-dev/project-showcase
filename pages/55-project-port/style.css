@@ -1,0 +1,114 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Header */
+  .hero {
+    background: linear-gradient(to right, #0000ff, #8800ff);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 3rem 2rem;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .project-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Form */
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background: #8e2de2;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #4a00e0;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #eee;
+    margin-top: 2rem;
+  }
+  
+  /* Animations */
+  .section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
