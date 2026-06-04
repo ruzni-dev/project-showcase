@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+    color: #e0e0ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.blue-accent {
+    color: #4A90E2;
+}
+
+.light-blue-accent {
+    color: #7BB2FF;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.name-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    margin: 2rem 0;
+    background: linear-gradient(45deg, #4A90E2, #7BB2FF, #B4D0FF, #4A90E2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 4s infinite, float 6s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+    padding: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.name-display::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #4A90E2, transparent);
+    animation: linePulse 3s infinite;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.birthday-card {
+    background: linear-gradient(145deg, rgba(26, 26, 58, 0.8), rgba(36, 36, 74, 0.8));
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+.birthday-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.birthday-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+    transform: rotate(0deg);
+    animation: rotate 15s linear infinite;
+}
+
+.birthday-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4A90E2, #7BB2FF, #4A90E2);
+    animation: lineFlow 3s infinite linear;
+}
+
+.message {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+}
+
+.gift-section {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.gift-btn {
+    background: linear-gradient(to right, #4A90E2, #7BB2FF);
+    color: #0a0a2a;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.5);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.gift-btn::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #4A90E2, #7BB2FF, #4A90E2);
+    z-index: -1;
+    border-radius: 50px;
+    animation: btnShine 3s infinite linear;
+    filter: blur(20px);
+    opacity: 0.7;
+}
+
+.gift-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(74, 144, 226, 0.7);
+}
+
+.gift-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeIn 1s ease forwards;
+}
+
+.gift-box {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.box-top {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(45deg, #4A90E2, #3A70B2);
+    transform-origin: bottom;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.7);
+}
+
+.box-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(45deg, #3A70B2, #2A5090);
+    bottom: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.7);
+}
+
+.box-lid {
+    position: absolute;
+    width: 110%;
+    height: 40%;
+    background: linear-gradient(45deg, #7BB2FF, #4A90E2);
+    left: -5%;
+    top: -40%;
+    border-radius: 15px;
+    transform-origin: bottom;
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.8);
+}
+
+.open .box-lid {
+    transform: rotateX(110deg);
+}
+
+.confetti {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+}
+
+.wishes {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    width: 90%;
+}
+
+.wish-card {
+    background: rgba(26, 26, 58, 0.7);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.wish-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.1), transparent);
+    z-index: -1;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: #4A90E2;
+    box-shadow: 0 15px 30px rgba(74, 144, 226, 0.3);
+}
+
+.wish-card i {
+    font-size: 3.5rem;
+    color: #4A90E2;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.wish-card:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.wish-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.wish-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.floating-element {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    color: #7BB2FF;
+    animation: float 15s infinite linear;
+    text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.floating-element:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-duration: 20s;
+}
+
+.floating-element:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-duration: 25s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 30%;
+    left: 15%;
+    animation-duration: 18s;
+}
+
+.floating-element:nth-child(4) {
+    bottom: 10%;
+    right: 20%;
+    animation-duration: 22s;
+}
+
+.floating-element:nth-child(5) {
+    top: 40%;
+    left: 25%;
+    animation-duration: 17s;
+}
+
+.floating-element:nth-child(6) {
+    top: 60%;
+    right: 30%;
+    animation-duration: 23s;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+footer a {
+    color: #e0e0ff;
+    font-weight: 500;
+    transition: .5s ease;
+    position: relative;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4A90E2;
+    transition: all 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+footer a:hover {
+    color: #4A90E2;
+}
+
+.cake-container {
+    width: 200px;
+    height: 150px;
+    margin: 2rem auto;
+    position: relative;
+    perspective: 1000px;
+}
+
+.cake {
+    width: 120px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cake-base {
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(to right, #7BB2FF, #4A90E2);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.cake-middle {
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(to right, #4A90E2, #3A70B2);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+}
+
+.cake-top {
+    width: 80px;
+    height: 25px;
+    background: linear-gradient(to right, #3A70B2, #2A5090);
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+}
+
+.candle {
+    width: 8px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFDB87, #D4AF37);
+    position: absolute;
+    bottom: 95px;
+    left: 56px;
+    border-radius: 4px;
+}
+
+.flame {
+    width: 15px;
+    height: 25px;
+    background: radial-gradient(ellipse at center, #FFDB87 0%, #D4AF37 50%, #FF7F00 100%);
+    border-radius: 50% 50% 20% 20%;
+    position: absolute;
+    bottom: 125px;
+    left: 52.5px;
+    animation: flicker 1.5s infinite alternate;
+    box-shadow: 0 0 15px #FF7F00, 0 0 20px #FFDB87;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(74, 144, 226, 0.8), 0 0 30px rgba(74, 144, 226, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes linePulse {
+    0% {
+        opacity: 0;
+        width: 0%;
+        left: 50%;
+    }
+    50% {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 0%;
+        left: 50%;
+    }
+}
+
+@keyframes lineFlow {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes btnShine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(200%) rotate(45deg);
+    }
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+    25%, 75% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .name-display {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .birthday-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .message {
+        font-size: 1.1rem;
+    }
+    
+    .wishes {
+        grid-template-columns: 1fr;
+    }
+}
