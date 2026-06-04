@@ -1,0 +1,125 @@
+:root {
+  --bg: #f1f6ff;
+  --shadow-light: #ffffff;
+  --shadow-dark: #cfd9ea;
+  --primary: #2b2d42;
+
+  --x-color: linear-gradient(135deg, #ff416c, #ff4b2b); /* pink/red */
+  --o-color: linear-gradient(135deg, #56ccf2, #2f80ed); /* cyan/blue */
+
+  --status-x: #ff4b5c;
+  --status-o: #3b82f6;
+  --status-draw: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  background: var(--bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px var(--shadow-dark),
+              -20px -20px 60px var(--shadow-light);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #5f72bd, #9b23ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cell {
+  background: var(--bg);
+  box-shadow: 6px 6px 12px var(--shadow-dark),
+              -6px -6px 12px var(--shadow-light);
+  border-radius: 16px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  color: var(--primary);
+}
+
+.cell.x {
+  background: var(--x-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cell.o {
+  background: var(--o-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cell:hover {
+  transform: scale(1.07);
+  background-color: #eaf2ff;
+}
+
+#statusText {
+  margin: 15px 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: 0.3s;
+}
+
+.status-x {
+  color: var(--status-x);
+}
+
+.status-o {
+  color: var(--status-o);
+}
+
+.status-draw {
+  color: var(--status-draw);
+}
+
+#restartBtn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 4px 4px 10px var(--shadow-dark),
+              -4px -4px 10px var(--shadow-light);
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: var(--primary);
+}
+
+#restartBtn:hover {
+  transform: scale(1.05);
+  background-color: #d4e4ff;
+}
