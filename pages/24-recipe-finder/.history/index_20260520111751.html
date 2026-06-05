@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Curated cooking discovery</span>
+                <h1>Find recipes that feel premium, fast, and genuinely useful.</h1>
+                <p>Search by ingredient, cuisine, diet, or cooking time. Save favorites, sort results, and jump straight into a polished recipe view.</p>
+                <div class="hero-actions">
+                    <button class="search-btn" id="random-btn" type="button">
+                        <i class="fas fa-dice"></i> Surprise me
+                    </button>
+                    <button class="ghost-btn" id="clear-btn" type="button">
+                        <i class="fas fa-rotate-left"></i> Clear filters
+                    </button>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-stat">
+                    <span>Recipes</span>
+                    <strong id="stat-recipes">0</strong>
+                </div>
+                <div class="hero-stat">
+                    <span>Quick picks</span>
+                    <strong id="stat-quick">0</strong>
+                </div>
+                <div class="hero-stat">
+                    <span>Favorites</span>
+                    <strong id="stat-favorites">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <header>
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Recipe Finder</h1>
+                    <p>Discover thousands of delicious recipes from around the world</p>
+                    <div class="project-tag">DARKBEAST's Project</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <div class="section-headline">
+                <div>
+                    <span class="eyebrow">Browse recipes</span>
+                    <h2>Find your perfect recipe</h2>
+                </div>
+                <div class="results-toolbar">
+                    <label for="sort-select">Sort by</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="rating">Top rated</option>
+                        <option value="time">Fastest</option>
+                        <option value="calories">Lightest</option>
+                        <option value="title">A to Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search for recipes, ingredients, or cuisines...">
+                </div>
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Vegetarian</button>
+                <button class="filter-btn">Vegan</button>
+                <button class="filter-btn">Gluten-Free</button>
+                <button class="filter-btn">Dessert</button>
+                <button class="filter-btn">Quick & Easy</button>
+                <button class="filter-btn">Favorites</button>
+            </div>
+        </section>
+
+        <section class="collections-section">
+            <div class="section-headline compact">
+                <div>
+                    <span class="eyebrow">Useful sections</span>
+                    <h2 class="section-title">Recipe collections</h2>
+                </div>
+                <p class="results-count">Quick ways to narrow the feed by cooking goal</p>
+            </div>
+            <div class="collections-grid" id="collections-grid"></div>
+        </section>
+
+        <section class="guide-section">
+            <div class="section-headline compact">
+                <div>
+                    <span class="eyebrow">Featured style</span>
+                    <h2 class="section-title">Kitchen guide</h2>
+                </div>
+                <p class="results-count">Small high-value tips for cooking faster and better</p>
+            </div>
+            <div class="guide-grid">
+                <article class="guide-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Cook faster</h3>
+                    <p>Use the quick filter, then sort by time to surface the fastest meals first.</p>
+                </article>
+                <article class="guide-card">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Save favorites</h3>
+                    <p>Bookmark recipes you want to revisit and open your saved list with one click.</p>
+                </article>
+                <article class="guide-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Cook lighter</h3>
+                    <p>Use the light-meal collection to surface fresher plates and lower-calorie choices.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="recipes-section">
+            <div class="section-headline compact">
+                <h2 class="section-title">Popular Recipes</h2>
+                <p id="results-count" class="results-count">Showing all recipes</p>
+            </div>
+            <div class="featured-strip" id="featured-strip"></div>
+            <div class="recipes-grid" id="recipes-grid">
+                <!-- Recipe cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <footer>
+            <p>Created by <a href="https://darkbeast2003.github.io/portfolio1/">DARKBEAST</a> | Recipe Finder | &copy; 2025</p>
+        </footer>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <img decoding="async" id="modal-image" src="" alt="Recipe">
+                <div class="modal-header-content">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <div class="modal-meta" id="modal-meta"></div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="favorite-btn" id="modal-favorite-btn" type="button">
+                    <i class="far fa-bookmark"></i> Save recipe
+                </button>
+                <button class="share-btn" id="copy-link-btn" type="button">
+                    <i class="fas fa-link"></i> Copy recipe link
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ingredients">
+                    <h3 class="section-heading">Ingredients</h3>
+                    <ul class="ingredients-list" id="ingredients-list"></ul>
+                </div>
+                <div class="instructions">
+                    <h3 class="section-heading">Instructions</h3>
+                    <ol class="instructions-list" id="instructions-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

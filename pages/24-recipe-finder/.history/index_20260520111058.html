@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Recipe Finder</h1>
+                    <p>Discover thousands of delicious recipes from around the world</p>
+                    <div class="project-tag">DARKBEAST's Project</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <h2>Find Your Perfect Recipe</h2>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search for recipes, ingredients, or cuisines...">
+                </div>
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Vegetarian</button>
+                <button class="filter-btn">Vegan</button>
+                <button class="filter-btn">Gluten-Free</button>
+                <button class="filter-btn">Dessert</button>
+                <button class="filter-btn">Quick & Easy</button>
+            </div>
+        </section>
+
+        <section class="recipes-section">
+            <h2 class="section-title">Popular Recipes</h2>
+            <div class="recipes-grid" id="recipes-grid">
+                <!-- Recipe cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <footer>
+            <p>Created by <a href="https://darkbeast2003.github.io/portfolio1/">DARKBEAST</a> | Recipe Finder | &copy; 2025</p>
+        </footer>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <img decoding="async" id="modal-image" src="" alt="Recipe">
+                <div class="modal-header-content">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <div class="modal-meta" id="modal-meta"></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="ingredients">
+                    <h3 class="section-heading">Ingredients</h3>
+                    <ul class="ingredients-list" id="ingredients-list"></ul>
+                </div>
+                <div class="instructions">
+                    <h3 class="section-heading">Instructions</h3>
+                    <ol class="instructions-list" id="instructions-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
