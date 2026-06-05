@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <div class="theme-toggle">
+        <input type="checkbox" id="themeSwitch">
+        <label for="themeSwitch" class="toggle">
+            <span class="btn">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </label>
+        <label for="themeSwitch" id="modeLabel">LIGHT MODE</label>
+    </div>
+
+    <div class="calculator">
+        <input type="text" id="display" readonly />
+
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button>(</button>
+            <button>)</button>
+            <button id="clear">C</button>
+            <button id="copy">Copy</button>
+
+            <!-- Row 2 -->
+            <button>sin</button>
+            <button>cos</button>
+            <button>tan</button>
+            <button>/</button>
+
+            <!-- Row 3 -->
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>*</button>
+
+            <!-- Row 4 -->
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+
+            <!-- Row 5 -->
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>+</button>
+
+            <!-- Row 6 -->
+            <button>0</button>
+            <button>.</button>
+            <button>sqrt</button>
+            <button>=</button>
+
+            <!-- Row 7 -->
+            <button>log</button>
+            <button>^</button>
+            <button>π</button>
+            <button>e</button>
+        </div>
+
+        <div class="history">
+            <h3>History</h3>
+            <ul id="historyList"></ul>
+            <div class="history-actions">
+                <button id="downloadHistory">Download TXT</button>
+                <button id="downloadCSV">Download CSV</button>
+                <button id="clearHistory">Clear History</button>
+                <button id="clearAllButLast">Clear All But Last</button>
+                <button id="undoDelete">Undo Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
