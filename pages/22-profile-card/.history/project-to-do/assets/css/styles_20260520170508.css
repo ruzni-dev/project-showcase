@@ -1,0 +1,7 @@
+/* Basic styles for project-to-do */
+:root{
+  --bg:#f7f7f7;
+  --accent:#2563eb;
+}
+body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);margin:0;padding:20px}
+#app{max-width:640px;margin:0 auto}

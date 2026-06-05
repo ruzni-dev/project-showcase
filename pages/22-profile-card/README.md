@@ -1,0 +1,42 @@
+# 22-profile-card
+
+Simple profile-card demo project.
+
+## Description
+
+This is a small front-end project demonstrating a profile card with a theme toggle, social links, and a projects list. It uses plain HTML, CSS and JavaScript and is intended to be hosted on GitHub Pages or served as a static site.
+
+## File structure
+
+The repository uses the following layout:
+
+```
+├── index.html
+├── README.md
+└── assets/
+	├── css/
+	│   └── styles.css
+	├── js/
+	│   └── app.js
+	└── images/
+	    └── img1.jpg, img3.jpg
+```
+
+## Usage
+
+- Open `index.html` in a browser to view the demo.
+- Or serve the folder with any static server (e.g., `npx http-server` or `python -m http.server`).
+
+## Notes
+
+- Personal GitHub links inside `index.html` use the username `ruzni-dev`.
+- Place any images in `assets/images/` and audio files in `assets/audio/`.
+
+## Author
+
+Mohamad Ruzni (`ruzni-dev`)
+
+Notes:
+- I copied your existing HTML/CSS/JS into `src/` and adjusted local paths.
+- Please move any image files (`img1.jpg`, `img3.jpg`) from the project root into `src/assets/images/`.
+- If you want, I can remove the original files from the project root or create a simple build script to produce `dist/`.

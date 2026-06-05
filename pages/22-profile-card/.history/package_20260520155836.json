@@ -1,0 +1,10 @@
+{
+  "name": "22-profile-card",
+  "version": "1.0.0",
+  "description": "Profile card project",
+  "scripts": {
+    "start": "serve dist -l 5000",
+    "build": "echo \"Add build steps\""
+  },
+  "devDependencies": {}
+}
