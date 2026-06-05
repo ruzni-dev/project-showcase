@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion Forums - LearnHub Educational Platform</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Join LearnHub's community discussions, ask questions, share knowledge, and connect with fellow learners and instructors." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Flearnhube4076back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L16 2z"/>
+                        <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-heading font-bold text-primary">LearnHub</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home_landing.html" class="text-text-secondary hover:text-primary transition-base">Home</a>
+                    <a href="course_catalog.html" class="text-text-secondary hover:text-primary transition-base">Courses</a>
+                    <a href="discussion_forums.html" class="text-primary font-medium">Community</a>
+                    <a href="user_dashboard.html" class="text-text-secondary hover:text-primary transition-base">Dashboard</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-primary hover:text-primary-700 font-medium transition-base">Sign In</button>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-base">Get Started</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-surface border-t">
+                    <a href="home_landing.html" class="block px-3 py-2 text-text-secondary">Home</a>
+                    <a href="course_catalog.html" class="block px-3 py-2 text-text-secondary">Courses</a>
+                    <a href="discussion_forums.html" class="block px-3 py-2 text-primary font-medium">Community</a>
+                    <a href="user_dashboard.html" class="block px-3 py-2 text-text-secondary">Dashboard</a>
+                    <div class="px-3 py-2 space-y-2">
+                        <button class="w-full text-left text-primary font-medium">Sign In</button>
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-lg">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-3xl sm:text-4xl font-heading font-bold text-text-primary mb-4">
+                    Discussion Forums
+                </h1>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto mb-8">
+                    Connect with fellow learners, ask questions, share knowledge, and get help from our community of students and instructors.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto relative">
+                    <div class="relative">
+                        <input type="text" placeholder="Search discussions, topics, or keywords..." class="w-full px-4 py-3 pl-12 pr-20 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-white px-4 py-1.5 rounded-md hover:bg-primary-700 transition-base">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <!-- Create New Discussion -->
+                    <div class="bg-surface border border-border rounded-xl p-6 mb-6 shadow-sm">
+                        <button class="w-full bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary-700 transition-base flex items-center justify-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            New Discussion
+                        </button>
+                    </div>
+
+                    <!-- Forum Categories -->
+                    <div class="bg-surface border border-border rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Categories</h3>
+                        <div class="space-y-3">
+                            <a href="javascript:void(0)" class="flex items-center justify-between p-3 rounded-lg hover:bg-primary-50 transition-base group">
+                                <div class="flex items-center">
+                                    <div class="bg-primary-100 p-2 rounded-lg mr-3 group-hover:bg-primary-200 transition-base">
+                                        <svg class="h-4 w-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-text-primary">General Discussion</div>
+                                        <div class="text-sm text-text-secondary">1,234 posts</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-text-secondary">324</span>
+                            </a>
+
+                            <a href="javascript:void(0)" class="flex items-center justify-between p-3 rounded-lg hover:bg-secondary-50 transition-base group">
+                                <div class="flex items-center">
+                                    <div class="bg-secondary-100 p-2 rounded-lg mr-3 group-hover:bg-secondary-200 transition-base">
+                                        <svg class="h-4 w-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-text-primary">Course Help</div>
+                                        <div class="text-sm text-text-secondary">892 posts</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-text-secondary">156</span>
+                            </a>
+
+                            <a href="javascript:void(0)" class="flex items-center justify-between p-3 rounded-lg hover:bg-accent-50 transition-base group">
+                                <div class="flex items-center">
+                                    <div class="bg-accent-100 p-2 rounded-lg mr-3 group-hover:bg-accent-200 transition-base">
+                                        <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-text-primary">Study Groups</div>
+                                        <div class="text-sm text-text-secondary">456 posts</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-text-secondary">89</span>
+                            </a>
+
+                            <a href="javascript:void(0)" class="flex items-center justify-between p-3 rounded-lg hover:bg-success-50 transition-base group">
+                                <div class="flex items-center">
+                                    <div class="bg-success-100 p-2 rounded-lg mr-3 group-hover:bg-success-200 transition-base">
+                                        <svg class="h-4 w-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-text-primary">Career Advice</div>
+                                        <div class="text-sm text-text-secondary">678 posts</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-text-secondary">123</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Active Users -->
+                    <div class="bg-surface border border-border rounded-xl p-6 mt-6 shadow-sm">
+                        <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">Active Contributors</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="John Smith" class="w-8 h-8 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-text-primary">John Smith</div>
+                                    <div class="text-xs text-text-secondary">Instructor • 1,234 points</div>
+                                </div>
+                                <div class="w-2 h-2 bg-success rounded-full"></div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sarah Johnson" class="w-8 h-8 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-text-primary">Sarah Johnson</div>
+                                    <div class="text-xs text-text-secondary">Student • 892 points</div>
+                                </div>
+                                <div class="w-2 h-2 bg-success rounded-full"></div>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Michael Chen" class="w-8 h-8 rounded-full object-cover mr-3" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-text-primary">Michael Chen</div>
+                                    <div class="text-xs text-text-secondary">Student • 567 points</div>
+                                </div>
+                                <div class="w-2 h-2 bg-warning rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Forum Content -->
+                <div class="lg:col-span-3">
+                    <!-- Filter and Sort Options -->
+                    <div class="bg-surface border border-border rounded-xl p-6 mb-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div class="flex flex-wrap items-center gap-4">
+                                <div class="flex items-center">
+                                    <label class="text-sm font-medium text-text-primary mr-2">Filter by:</label>
+                                    <select class="border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>All Categories</option>
+                                        <option>General Discussion</option>
+                                        <option>Course Help</option>
+                                        <option>Study Groups</option>
+                                        <option>Career Advice</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center">
+                                    <label class="text-sm font-medium text-text-primary mr-2">Sort by:</label>
+                                    <select class="border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option>Latest Activity</option>
+                                        <option>Most Replies</option>
+                                        <option>Most Votes</option>
+                                        <option>Newest</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="flex items-center text-sm text-primary hover:text-primary-700 transition-base">
+                                <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                                </svg>
+                                Advanced Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Discussion Threads -->
+                    <div class="space-y-4">
+                        <!-- Featured/Pinned Thread -->
+                        <div class="bg-surface border border-border rounded-xl p-6 shadow-sm border-l-4 border-l-accent">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="bg-accent-100 p-2 rounded-lg mr-3">
+                                        <svg class="h-4 w-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="bg-accent text-white px-2 py-1 rounded-full text-xs font-medium">Pinned</span>
+                                </div>
+                                <div class="text-sm text-text-secondary">2 hours ago</div>
+                            </div>
+                            
+                            <h3 class="text-lg font-heading font-semibold text-text-primary mb-2 hover:text-primary cursor-pointer transition-base">
+                                Welcome to LearnHub Community Forums - Guidelines and Best Practices
+                            </h3>
+                            <p class="text-text-secondary mb-4">
+                                Please read our community guidelines before posting. Learn how to ask effective questions, share knowledge, and contribute positively to our learning community...
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="John Smith" class="w-6 h-6 rounded-full object-cover mr-2" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                        <span class="text-sm text-text-secondary">John Smith</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        45 replies
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        1,234 views
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-primary transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                        </svg>
+                                        23
+                                    </button>
+                                    <button class="text-sm text-text-secondary hover:text-primary transition-base">
+                                        Follow
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Thread 1 -->
+                        <div class="bg-surface border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-base">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center">
+                                    <span class="bg-success text-white px-2 py-1 rounded-full text-xs font-medium mr-2">Solved</span>
+                                    <span class="bg-primary-100 text-primary px-2 py-1 rounded-full text-xs font-medium">JavaScript</span>
+                                </div>
+                                <div class="text-sm text-text-secondary">4 hours ago</div>
+                            </div>
+                            
+                            <h3 class="text-lg font-heading font-semibold text-text-primary mb-2 hover:text-primary cursor-pointer transition-base">
+                                How to handle asynchronous operations in JavaScript?
+                            </h3>
+                            <p class="text-text-secondary mb-4">
+                                I'm struggling with understanding promises and async/await in JavaScript. Can someone explain the difference and when to use each approach? I have a specific example where I'm fetching data from an API...
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Emily Rodriguez" class="w-6 h-6 rounded-full object-cover mr-2" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                        <span class="text-sm text-text-secondary">Emily Rodriguez</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        12 replies
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        456 views
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-primary transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                                        </svg>
+                                        8
+                                    </button>
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-error transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"/>
+                                        </svg>
+                                        2
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Thread 2 -->
+                        <div class="bg-surface border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-base">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center">
+                                    <span class="bg-secondary-100 text-secondary px-2 py-1 rounded-full text-xs font-medium">Python</span>
+                                </div>
+                                <div class="text-sm text-text-secondary">6 hours ago</div>
+                            </div>
+                            
+                            <h3 class="text-lg font-heading font-semibold text-text-primary mb-2 hover:text-primary cursor-pointer transition-base">
+                                Best practices for data visualization with Python
+                            </h3>
+                            <p class="text-text-secondary mb-4">
+                                I'm working on a data science project and need to create compelling visualizations. What are the best libraries and techniques for creating professional-looking charts and graphs in Python?
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="David Kim" class="w-6 h-6 rounded-full object-cover mr-2" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                        <span class="text-sm text-text-secondary">David Kim</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        7 replies
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        289 views
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-primary transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                                        </svg>
+                                        15
+                                    </button>
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-error transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"/>
+                                        </svg>
+                                        1
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Thread 3 -->
+                        <div class="bg-surface border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-base">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center">
+                                    <span class="bg-accent-100 text-accent px-2 py-1 rounded-full text-xs font-medium">Career</span>
+                                </div>
+                                <div class="text-sm text-text-secondary">8 hours ago</div>
+                            </div>
+                            
+                            <h3 class="text-lg font-heading font-semibold text-text-primary mb-2 hover:text-primary cursor-pointer transition-base">
+                                Transitioning from marketing to web development - advice needed
+                            </h3>
+                            <p class="text-text-secondary mb-4">
+                                I've been working in marketing for 5 years and want to transition to web development. I've completed several courses on LearnHub. What should be my next steps? How do I build a portfolio that stands out?
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lisa Thompson" class="w-6 h-6 rounded-full object-cover mr-2" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                        <span class="text-sm text-text-secondary">Lisa Thompson</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        18 replies
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        672 views
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-primary transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                                        </svg>
+                                        24
+                                    </button>
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-error transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6"/>
+                                        </svg>
+                                        3
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Study Group Thread -->
+                        <div class="bg-surface border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-base">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center">
+                                    <span class="bg-success-100 text-success px-2 py-1 rounded-full text-xs font-medium">Study Group</span>
+                                </div>
+                                <div class="text-sm text-text-secondary">12 hours ago</div>
+                            </div>
+                            
+                            <h3 class="text-lg font-heading font-semibold text-text-primary mb-2 hover:text-primary cursor-pointer transition-base">
+                                Looking for study partners for Data Science Bootcamp
+                            </h3>
+                            <p class="text-text-secondary mb-4">
+                                Starting the Complete Data Science Bootcamp next week and looking for motivated study partners. Planning to meet virtually twice a week to discuss concepts, work on projects together, and keep each other accountable.
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <div class="flex items-center">
+                                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Alex Martinez" class="w-6 h-6 rounded-full object-cover mr-2" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; this.onerror=null;" />
+                                        <span class="text-sm text-text-secondary">Alex Martinez</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        9 replies
+                                    </div>
+                                    <div class="flex items-center text-sm text-text-secondary">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                        234 views
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex items-center text-sm text-text-secondary hover:text-primary transition-base">
+                                        <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                                        </svg>
+                                        12
+                                    </button>
+                                    <button class="text-sm bg-primary text-white px-3 py-1 rounded-lg hover:bg-primary-700 transition-base">
+                                        Join Group
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex items-center justify-between mt-8">
+                        <div class="text-sm text-text-secondary">
+                            Showing 1-5 of 234 discussions
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-2 border border-border rounded-lg text-text-secondary hover:bg-primary-50 hover:text-primary transition-base disabled:opacity-50" disabled>
+                                Previous
+                            </button>
+                            <button class="px-3 py-2 bg-primary text-white rounded-lg">1</button>
+                            <button class="px-3 py-2 border border-border rounded-lg text-text-secondary hover:bg-primary-50 hover:text-primary transition-base">2</button>
+                            <button class="px-3 py-2 border border-border rounded-lg text-text-secondary hover:bg-primary-50 hover:text-primary transition-base">3</button>
+                            <span class="px-3 py-2 text-text-secondary">...</span>
+                            <button class="px-3 py-2 border border-border rounded-lg text-text-secondary hover:bg-primary-50 hover:text-primary transition-base">47</button>
+                            <button class="px-3 py-2 border border-border rounded-lg text-text-secondary hover:bg-primary-50 hover:text-primary transition-base">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L16 2z"/>
+                            <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-heading font-bold">LearnHub</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Democratizing education through free, accessible learning resources and community-driven knowledge sharing.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-heading font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="course_catalog.html" class="text-gray-400 hover:text-white transition-base">Browse Courses</a></li>
+                        <li><a href="discussion_forums.html" class="text-gray-400 hover:text-white transition-base">Community</a></li>
+                        <li><a href="user_dashboard.html" class="text-gray-400 hover:text-white transition-base">Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">Certificates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-heading font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">FAQ</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-base">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-heading font-semibold mb-4">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Get the latest courses and updates delivered to your inbox.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary" />
+                        <button type="submit" class="w-full bg-primary text-white py-2 rounded-lg font-medium hover:bg-primary-700 transition-base">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 LearnHub Educational Platform. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white text-sm transition-base">Terms of Service</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white text-sm transition-base">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white text-sm transition-base">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
