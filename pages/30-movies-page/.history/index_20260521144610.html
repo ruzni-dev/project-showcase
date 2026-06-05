@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Discovery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <h1>DARKBEAST's Movie Discovery</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Popular</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#">Top Rated</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for movies...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="popular">Popular</button>
+            <button class="filter-btn" data-filter="now_playing">Now Playing</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+            <button class="filter-btn" data-filter="top_rated">Top Rated</button>
+        </div>
+
+        <div class="movies-grid" id="movies-grid">
+            <!-- Movies will be loaded here -->
+            <div class="loading">
+                <i class="fas fa-spinner"></i>Loading movies...
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <img class="modal-poster" id="modal-poster" src="" alt="Movie Poster">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modal-title"></h2>
+                <div class="modal-movie-details">
+                    <span id="modal-rating"></span>
+                    <span id="modal-release-date"></span>
+                    <span id="modal-runtime"></span>
+                </div>
+                <p class="modal-overview" id="modal-overview"></p>
+                <div class="modal-footer">
+                    <button class="modal-btn watch-trailer">Watch Trailer</button>
+                    <button class="modal-btn add-to-favorites">Add to Favorites</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Movie Discovery App &copy; 2023. Designed By <a href="https://darkbeast2003.github.io/portfolio1/">DARKBEAST</a> | Powered by TMDB API.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
