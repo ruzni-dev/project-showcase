@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1a365d; /* Deep navy foundation */
+  --color-primary-50: #e6f3ff;
+  --color-primary-100: #b3d9ff;
+  --color-primary-200: #80bfff;
+  --color-primary-300: #4da6ff;
+  --color-primary-400: #1a8cff;
+  --color-primary-500: #1a365d; /* Primary */
+  --color-primary-600: #152d4d;
+  --color-primary-700: #10243d;
+  --color-primary-800: #0b1b2d;
+  --color-primary-900: #06121d;
+
+  /* Secondary Colors */
+  --color-secondary: #319795; /* Vibrant teal energy */
+  --color-secondary-50: #e6fffa;
+  --color-secondary-100: #b3f5f0;
+  --color-secondary-200: #81e6d9;
+  --color-secondary-300: #4fd1c7;
+  --color-secondary-400: #38b2ac;
+  --color-secondary-500: #319795; /* Secondary */
+  --color-secondary-600: #2c7a7b;
+  --color-secondary-700: #285e61;
+  --color-secondary-800: #234e52;
+  --color-secondary-900: #1d4044;
+
+  /* Accent Colors */
+  --color-accent: #ed8936; /* Warm orange urgency */
+  --color-accent-50: #fffaf0;
+  --color-accent-100: #feebc8;
+  --color-accent-200: #fbd38d;
+  --color-accent-300: #f6ad55;
+  --color-accent-400: #ed8936; /* Accent */
+  --color-accent-500: #dd6b20;
+  --color-accent-600: #c05621;
+  --color-accent-700: #9c4221;
+  --color-accent-800: #7b341e;
+  --color-accent-900: #652b19;
+
+  /* Background Colors */
+  --color-background: #ffffff; /* Pure white clarity */
+  --color-surface: #f7fafc; /* Subtle gray lift */
+  --color-surface-100: #edf2f7;
+  --color-surface-200: #e2e8f0;
+  --color-surface-300: #cbd5e0;
+
+  /* Text Colors */
+  --color-text-primary: #2d3748; /* Rich charcoal readability */
+  --color-text-secondary: #718096; /* Balanced gray hierarchy */
+  --color-text-muted: #a0aec0;
+
+  /* Status Colors */
+  --color-success: #38a169; /* Confident green progress */
+  --color-success-50: #f0fff4;
+  --color-success-100: #c6f6d5;
+  --color-success-200: #9ae6b4;
+  --color-success-300: #68d391;
+  --color-success-400: #48bb78;
+  --color-success-500: #38a169; /* Success */
+  --color-success-600: #2f855a;
+  --color-success-700: #276749;
+  --color-success-800: #22543d;
+  --color-success-900: #1c4532;
+
+  --color-warning: #d69e2e; /* Amber attention */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #d69e2e; /* Warning */
+  --color-warning-600: #b45309;
+  --color-warning-700: #92400e;
+  --color-warning-800: #78350f;
+  --color-warning-900: #451a03;
+
+  --color-error: #e53e3e; /* Clear red concern */
+  --color-error-50: #fed7d7;
+  --color-error-100: #feb2b2;
+  --color-error-200: #fc8181;
+  --color-error-300: #f56565;
+  --color-error-400: #e53e3e; /* Error */
+  --color-error-500: #c53030;
+  --color-error-600: #9b2c2c;
+  --color-error-700: #742a2a;
+  --color-error-800: #63171b;
+  --color-error-900: #521b1b;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 400ms ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 300ms ease-out;
+}
+
+/* Custom component styles */
+.btn-primary {
+  @apply bg-primary text-white font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-primary-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-secondary-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+}
+
+.btn-accent {
+  @apply bg-accent text-white font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-accent-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-surface-200 p-6 transition-all duration-300 ease-out hover:shadow-md;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-surface-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 ease-out;
+}

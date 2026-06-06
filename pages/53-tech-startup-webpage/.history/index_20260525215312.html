@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B SaaS Automation Platform</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #2d3748;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .redirect-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+        .loading-text {
+            font-size: 1.125rem;
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+        .page-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .page-link {
+            display: block;
+            padding: 1rem;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 300ms ease-out;
+            font-weight: 600;
+        }
+        .page-link:hover {
+            background: #319795;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .spinner {
+            border: 3px solid #e2e8f0;
+            border-top: 3px solid #319795;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fworkflowr4152back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.4"></script>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">SaaS Platform</div>
+        <div class="spinner"></div>
+        <div class="loading-text">Choose a page to navigate to:</div>
+        
+        <div class="page-list">
+            <a href="pages/homepage_b2b_saa_s_platform.html" class="page-link">
+                Homepage - B2B SaaS Platform
+            </a>
+            <a href="pages/solutions_industry_specific.html" class="page-link">
+                Solutions - Industry Specific
+            </a>
+            <a href="pages/features_interactive_comparison.html" class="page-link">
+                Features - Interactive Comparison
+            </a>
+            <a href="pages/pricing_roi_focused.html" class="page-link">
+                Pricing - ROI Focused
+            </a>
+            <a href="pages/resources_authority_hub.html" class="page-link">
+                Resources - Authority Hub
+            </a>
+            <a href="pages/customer_stories_success_narratives.html" class="page-link">
+                Customer Stories - Success Narratives
+            </a>
+            <a href="pages/about_mission_team.html" class="page-link">
+                About - Mission & Team
+            </a>
+            <a href="pages/contact_intelligent_routing.html" class="page-link">
+                Contact - Intelligent Routing
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect to homepage after 3 seconds if no manual selection
+        setTimeout(function() {
+            if (window.location.hash === '') {
+                window.location.href = 'pages/homepage_b2b_saa_s_platform.html';
+            }
+        }, 3000);
+
+        // Add click tracking
+        document.querySelectorAll('.page-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Add a small delay for visual feedback
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
