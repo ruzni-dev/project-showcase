@@ -1,0 +1,46 @@
+body {
+    background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+.weather-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
+.forecast-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+.forecast-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.03);
+}
+.temp-main {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.weather-detail {
+    font-size: 1.1rem;
+}
+.search-btn {
+    border-radius: 0 10px 10px 0;
+}
+.location-btn {
+    background-color: #5151e5;
+    color: white;
+}
+.credit {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}

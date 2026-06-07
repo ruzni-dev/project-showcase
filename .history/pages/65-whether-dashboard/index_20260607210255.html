@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="py-4">
+    <div class="container">
+        <header class="text-center mb-4">
+            <h1 class="display-4 fw-bold text-white"><i class="fas fa-cloud-sun me-2"></i>Weather Dashboard</h1>
+            <p class="lead text-white">Check current weather and 5-day forecast for any city</p>
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="input-group mb-4">
+                    <input type="text" id="city-input" class="form-control py-2" placeholder="Enter city name...">
+                    <button class="btn btn-primary search-btn" id="search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                    <button class="btn location-btn ms-2" id="location-btn">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="weather-card p-4 mb-4 text-center">
+                    <div id="current-weather">
+                        <div class="text-center py-5">
+                            <h3>Search for a city to see weather information</h3>
+                            <p class="text-muted">Or use your current location</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-center text-white mb-3" id="forecast-title" style="display: none;">5-Day Forecast</h3>
+        <div class="row justify-content-center" id="forecast-container">
+            <!-- Forecast cards will be inserted here -->
+        </div>
+
+        <footer class="text-center mt-5">
+            <p class="credit">Powered by OpenWeatherMap</p>
+        </footer>
+    </div>
+
+    <script>
+        // API Key for OpenWeatherMap
+        const apiKey = '9fac2c54a6a88a1f542c2e83df94d424'; // Replace with your actual API key
+
+        // DOM Elements
+        const cityInput = document.getElementById('city-input');
+        const searchBtn = document.getElementById('search-btn');
+        const locationBtn = document.getElementById('location-btn');
+        const currentWeatherDiv = document.getElementById('current-weather');
+        const forecastContainer = document.getElementById('forecast-container');
+        const forecastTitle = document.getElementById('forecast-title');
+
+        // Event Listeners
+        searchBtn.addEventListener('click', () => {
+            const city = cityInput.value.trim();
+            if (city) {
+                getWeatherData(city);
+            }
+        });
+
+        locationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const { latitude, longitude } = position.coords;
+                        getWeatherByCoords(latitude, longitude);
+                    },
+                    error => {
+                        alert('Unable to retrieve your location. Please allow location access or search for a city.');
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by your browser. Please search for a city.');
+            }
+        });
+
+        cityInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+
+        // Functions
+        async function getWeatherData(city) {
+            try {
+                // Get current weather
+                const currentWeatherResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+                );
+                
+                if (!currentWeatherResponse.ok) {
+                    throw new Error('City not found');
+                }
+                
+                const currentWeatherData = await currentWeatherResponse.json();
+                
+                // Get 5-day forecast
+                const forecastResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+                );
+                
+                if (!forecastResponse.ok) {
+                    throw new Error('Forecast not available');
+                }
+                
+                const forecastData = await forecastResponse.json();
+                
+                displayCurrentWeather(currentWeatherData);
+                displayForecast(forecastData);
+                
+            } catch (error) {
+                alert(error.message);
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        async function getWeatherByCoords(lat, lon) {
+            try {
+                // Get current weather by coordinates
+                const currentWeatherResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+                );
+                
+                if (!currentWeatherResponse.ok) {
+                    throw new Error('Location not found');
+                }
+                
+                const currentWeatherData = await currentWeatherResponse.json();
+                
+                // Get 5-day forecast by coordinates
+                const forecastResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+                );
+                
+                if (!forecastResponse.ok) {
+                    throw new Error('Forecast not available');
+                }
+                
+                const forecastData = await forecastResponse.json();
+                
+                displayCurrentWeather(currentWeatherData);
+                displayForecast(forecastData);
+                cityInput.value = currentWeatherData.name;
+                
+            } catch (error) {
+                alert(error.message);
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        function displayCurrentWeather(data) {
+            const { name, main, weather, wind, dt } = data;
+            const iconCode = weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            const date = new Date(dt * 1000);
+            
+            currentWeatherDiv.innerHTML = `
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="mb-2">${name}</h2>
+                        <p class="mb-1">${date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                        <img src="${iconUrl}" alt="${weather[0].description}" class="weather-icon mb-2">
+                        <p class="mb-0">${weather[0].main}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="temp-main">${Math.round(main.temp)}°C</div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <p class="weather-detail"><i class="fas fa-temperature-high me-2"></i>Feels like: ${Math.round(main.feels_like)}°C</p>
+                                <p class="weather-detail"><i class="fas fa-wind me-2"></i>Wind: ${wind.speed} m/s</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="weather-detail"><i class="fas fa-tint me-2"></i>Humidity: ${main.humidity}%</p>
+                                <p class="weather-detail"><i class="fas fa-compress-alt me-2"></i>Pressure: ${main.pressure} hPa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function displayForecast(data) {
+            // Show forecast title
+            forecastTitle.style.display = 'block';
+            
+            // Filter to get one forecast per day (around noon)
+            const dailyForecasts = data.list.filter(item => 
+                item.dt_txt.includes('12:00:00')
+            ).slice(0, 5);
+            
+            forecastContainer.innerHTML = '';
+            
+            dailyForecasts.forEach(day => {
+                const iconCode = day.weather[0].icon;
+                const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+                const date = new Date(day.dt * 1000);
+                
+                const forecastCard = document.createElement('div');
+                forecastCard.className = 'col-md-2 col-sm-4 mb-3';
+                forecastCard.innerHTML = `
+                    <div class="forecast-card p-3 text-center">
+                        <h5>${date.toLocaleDateString('en-US', { weekday: 'short' })}</h5>
+                        <p class="mb-1">${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
+                        <img src="${iconUrl}" alt="${day.weather[0].description}">
+                        <p class="mb-0 mt-2">${Math.round(day.main.temp)}°C</p>
+                        <small>${day.weather[0].main}</small>
+                    </div>
+                `;
+                
+                forecastContainer.appendChild(forecastCard);
+            });
+        }
+
+        // Get user's location on load if they allow it
+        window.addEventListener('load', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const { latitude, longitude } = position.coords;
+                        getWeatherByCoords(latitude, longitude);
+                    },
+                    error => {
+                        // User denied location access - do nothing
+                        console.log('Location access denied');
+                    }
+                );
+            }
+        });
+    </script>
+</body>
+</html>
