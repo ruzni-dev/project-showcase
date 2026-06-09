@@ -1,0 +1,190 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --primary-color: #5e72e4;
+    --secondary-color: #825ee4;
+    --accent-color: #ff6b6b;
+    --text-color: #2d3436;
+    --light-text: #ffffff;
+    --bg-color: #ffff7d;
+    --search-bg: rgba(255, 255, 255, 0.5);
+    --transition-speed: 0.6s;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.search-weapon {
+    position: relative;
+    width: 70px;
+    transition: all var(--transition-speed) cubic-bezier(0.000, 0.140, 0.035, 1.579);
+}
+
+.search-weapon.active {
+    width: 400px;
+}
+
+.input-holder {
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background: var(--search-bg);
+    border-radius: 60px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed) cubic-bezier(0.000, 0.140, 0.035, 1.579);
+}
+
+.search-weapon.active .input-holder {
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(100, 32, 231, 0.2);
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    transform: translateY(-100%);
+    transition: all var(--transition-speed) cubic-bezier(0.000, 0.140, 0.035, 1.579);
+    transition-delay: 0.1s;
+}
+
+.search-weapon.active .search-input {
+    transform: translateY(0);
+}
+
+.search-icon {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 60px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.search-weapon.active .search-icon {
+    width: 90px;
+    height: 90px;
+    margin: -10px;
+    border-radius: 70px;
+}
+
+.search-icon span {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    transform: rotate(45deg);
+    transition: all var(--transition-speed) cubic-bezier(0.050, -0.000, 0.240, 1.040);
+}
+
+.search-weapon.active .search-icon span {
+    transform: rotate(-45deg);
+}
+.search-weapon.active .search-icon {
+    transform: scale(.6);
+}
+
+.search-icon span::before,
+.search-icon span::after {
+    position: absolute;
+    content: '';
+}
+
+.search-icon span::before {
+    width: 4px;
+    height: 11px;
+    left: 9px;
+    top: 18px;
+    border-radius: 2px;
+    background: var(--light-text);
+}
+
+.search-icon span::after {
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 0;
+    border-radius: 16px;
+    border: 2px solid var(--light-text);
+}
+
+.close {
+    position: absolute;
+    z-index: 2;
+    top: 27px;
+    right: -28px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: rotate(-180deg);
+    transition: all var(--transition-speed) cubic-bezier(0.250, -0.050, 0.035, 0.210);
+    transition-delay: 0.1s;
+    opacity: 0;
+}
+
+.search-weapon.active .close {
+    transform: rotate(45deg);
+    opacity: 1;
+    transition: all calc(var(--transition-speed) * 1.5) cubic-bezier(0.000, 0.100, 0.005, 1.570);
+    transition-delay: 0.5s;
+}
+
+.close::before,
+.close::after {
+    position: absolute;
+    content: '';
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.close::before {
+    width: 20px;
+    height: 2px;
+    left: 0;
+    top: 9px;
+}
+
+.close::after {
+    width: 2px;
+    height: 20px;
+    left: 9px;
+    top: 0;
+}
+
+.search-input::placeholder {
+    color: rgba(45, 52, 54, 0.5);
+    font-weight: 300;
+}
+
+.search-weapon.active .input-holder {
+    background: var(--search-bg);
+}
