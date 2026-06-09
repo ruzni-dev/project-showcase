@@ -448,7 +448,7 @@ body {
 }
 
 .forecast-col {
-    width: 20%;
+    display: flex;
     justify-content: center;
 }
 

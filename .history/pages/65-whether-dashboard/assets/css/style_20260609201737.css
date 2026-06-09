@@ -403,12 +403,7 @@ body {
 
 /* Forecast section */
 .forecast-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-
+    
 }
 
 .forecast-section-title {
@@ -448,8 +443,10 @@ body {
 }
 
 .forecast-col {
-    width: 20%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
+    gap: 20px;
 }
 
 .forecast-luxury-card {

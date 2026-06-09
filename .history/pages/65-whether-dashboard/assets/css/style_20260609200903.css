@@ -447,13 +447,7 @@ body {
     right: 10%;
 }
 
-.forecast-col {
-    width: 20%;
-    justify-content: center;
-}
-
 .forecast-luxury-card {
-    width: auto;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
     backdrop-filter: blur(15px);
     border-radius: 30px;

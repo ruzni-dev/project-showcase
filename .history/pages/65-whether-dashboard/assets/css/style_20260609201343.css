@@ -447,13 +447,8 @@ body {
     right: 10%;
 }
 
-.forecast-col {
-    width: 20%;
-    justify-content: center;
-}
-
 .forecast-luxury-card {
-    width: auto;
+    width: 100%;
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
     backdrop-filter: blur(15px);
     border-radius: 30px;
@@ -461,8 +456,6 @@ body {
     text-align: center;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border: 1px solid rgba(255,215,0,0.2);
-    position: relative;
-    overflow: hidden;
 }
 
 .forecast-luxury-card::before {
